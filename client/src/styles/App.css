@@ -1,0 +1,416 @@
+/* css for the App */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 200px;
+  box-sizing: border-box;
+  transition: padding 0.3s ease;
+}
+
+.column {
+  flex: 1;
+  padding: 20px 20px 0 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.column-left>*:not(:first-child) {
+  margin-left: 50px;
+}
+
+.column-left {
+  background-color: #f4f4f4;
+}
+
+.column-right {
+  background-color: #DDE4E6;
+}
+
+
+
+/* css for the logo */
+
+.logoImage {
+  margin-bottom: 60px;
+}
+
+
+
+/* css for the opening text */
+
+.WeatherOpening {
+  width: 271px;
+  height: 95px;
+  text-align: left;
+  letter-spacing: 2px;
+  color: #707070;
+  opacity: 1;
+  font-weight: 300;
+  font-family: Heebo;
+}
+
+
+
+/* css for the Weatherform component */
+
+.cityName {
+  margin-top: 60px;
+  color: #707070;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.textContainer {
+  position: relative;
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.check-button {
+  top: 24%;
+  right: -6%;
+  padding: 5px 16px;
+  background-color: #166fb8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.check-button:hover {
+  background-color: #438ec0;
+}
+
+
+
+/* css for the LocationInfo component */
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 185px;
+  text-transform: lowercase;
+}
+
+.weather-data .top-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.weather-data .top-row h3 {
+  margin: 0;
+  color: #707070;
+}
+
+.weather-data .date {
+  margin: 0;
+}
+
+.weather-data h3 {
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #707070;
+  font-weight: 300;
+}
+
+
+
+/* css for the WeatherInfo component */
+
+.weather-info-container {
+  background-color: #257594;
+  padding: 15px;
+  border-radius: 25px;
+  color: white;
+  margin: 65px 65px 65px 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 405px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* css for weather-location */
+
+.weather-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.weather-location h1 {
+  color: #E8F1F2;
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.weather-location h2 {
+  color: #A8C6CB;
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1;
+  font-weight: 300;
+  margin-top: 3px;
+}
+
+.weather-location h3 {
+  color: #A8C6CB;
+  font-size: 0.8rem;
+  margin: 10px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+
+/* css for weather-details */
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.weather-details h1 {
+  color: #FFFFFF;
+  font-size: 6rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.weather-details h1 span {
+  letter-spacing: -0.075em;
+}
+
+.weather-details h2 {
+  color: #E8F1F2;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1;
+  width: 28%;
+  text-align: center;
+  margin-top: -15px;
+  font-weight: 300;
+  text-transform: lowercase;
+  text-wrap: nowrap;
+}
+
+
+/* css for weather-stats */
+
+.weather-stats {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* css for weather-labels & values */
+
+.weather-labels,
+.weather-values {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.weather-labels h3 {
+  color: #E8F1F2;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex: 1 1;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.weather-values h3 {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex: 1;
+}
+
+.weather-labels {
+  margin-bottom: 5px;
+}
+
+.weather-values {
+  font-weight: bold;
+}
+
+
+/* css for hourly-data */
+
+.hourly-data {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.hourly-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.hours {
+  color: #A8C6CB;
+}
+
+.temperatures {
+  color: #FFFFFF;
+}
+
+
+
+/* css for error-message */
+
+.error-message {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+
+
+/* Media Queries */
+
+/* Mobile Devices (up to 720px) */
+@media only screen and (max-width: 720px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .column {
+    padding: 10px;
+  }
+
+  .input-container {
+    margin-bottom: 20px;
+  }
+
+  .weather-info-container {
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .weather-details h1 {
+    font-size: 3rem;
+  }
+
+  .weather-details h2 {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.1em;
+  }
+
+  .weather-labels,
+  .weather-values {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hourly-data {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hourly-item {
+    padding: 10px 0;
+  }
+
+  .column-left>*:not(:first-child) {
+    margin-left: 0px;
+  }
+
+  .weather-data {
+    padding-bottom: 10px;
+    padding-top: 40px;
+  }
+}
+
+
+/* Tablets (721px to 1024px) */
+@media only screen and (min-width: 721px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    padding: 30px;
+  }
+
+  .column {
+    padding: 15px;
+  }
+
+  .input-container {
+    margin-bottom: 25px;
+  }
+
+  .weather-info-container {
+    margin: 25px 0;
+    padding: 15px;
+  }
+
+  .weather-details h1 {
+    font-size: 2.5rem;
+  }
+
+  .weather-details h2 {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.1em;
+  }
+
+  .weather-labels,
+  .weather-values {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .hourly-data {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .hourly-item {
+    padding: 15px 0;
+  }
+
+  .weather-data {
+    padding-top: 95px;
+  }
+}
