@@ -6,4 +6,4 @@ const processHourlyData = (hourlyData) => {
     }));
 };
 
-module.exports = processHourlyData;
+export default processHourlyData;

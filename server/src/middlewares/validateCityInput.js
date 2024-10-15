@@ -8,9 +8,8 @@ const validateCityInput = (req, res, next) => {
             error: 'City name is required'
         });
     }
-
     // Move to the controller
     next();
 }
 
-module.exports = validateCityInput;
+export default validateCityInput;

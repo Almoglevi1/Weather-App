@@ -1,11 +1,11 @@
-const axios = require('axios');
-const processHourlyData = require('../utils/processHourlyData');
+import axios from 'axios';
+import processHourlyData from '../utils/processHourlyData';
 
 const weatherApiUrl = 'http://api.weatherapi.com/v1/current.json'; // API url for current weather data
 const weatherApiForecastUrl = 'http://api.weatherapi.com/v1/forecast.json'; // API url for hourly forecast data
 
 // Fetch current weather data for the city
-const getWeatherData = async (city) => {
+export const getWeatherData = async (city) => {
     try {
         const response = await axios.get(weatherApiUrl, {
             params: {
@@ -15,13 +15,13 @@ const getWeatherData = async (city) => {
         });
         return response.data;
     } catch (error) {
-        console.error(`Error fetching weather data for ${city}:`, error.message);
-        throw new Error('Failed to fetch weather data');
+        console.error(`Error fetching weather data for ${city}: ${error.message}`);
+        throw new Error(`Error fetching weather data for ${city}: ${error.message}`);
     }
 };
 
 // Fetch hourly forecast data for the city
-const getHourlyForecastData = async (city) => {
+export const getHourlyForecastData = async (city) => {
     try {
         const response = await axios.get(weatherApiForecastUrl, {
             params: {
@@ -34,8 +34,7 @@ const getHourlyForecastData = async (city) => {
         // Process the hourly data before returning 
         return processHourlyData(response.data.forecast.forecastday[0].hour);
     } catch (error) {
-        console.error(`Error fetching hourly forecast data for ${city}:`, error.message);
-        throw new Error('Failed to fetch hourly forecast data');
+        console.error(`Error fetching hourly forecast data for ${city}: ${error.message}`);
+        throw new Error(`Error fetching hourly forecast data for ${city}: ${error.message}`);
     }
 };
-module.exports = { getWeatherData, getHourlyForecastData };

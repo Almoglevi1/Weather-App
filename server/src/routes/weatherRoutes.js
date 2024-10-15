@@ -1,10 +1,10 @@
-const express = require('express');
-const weatherController = require('../../controllers/weatherController.js');
-const validateCityInput = require('../../middlewares/validateCityInput.js');
+import express from 'express';
+import weatherController from '../controllers/weatherController';
+import validateCityInput from '../middlewares/validateCityInput';
 
 const router = express.Router();
 
 // Weather route: GET /api/weather?city=CityName
 router.get('/', validateCityInput, weatherController);
 
-module.exports = router;
+export default router;

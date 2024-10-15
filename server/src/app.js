@@ -1,13 +1,14 @@
-require('dotenv').config(); // Load environment variables
-const express = require("express");
-const cors = require("cors");
-const weatherRoute = require("./api/routes/weatherRoutes");
-const { notFoundHandler, invalidCityHandler, errorHandler } = require("./middlewares/errorHandler");
+import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import weatherRoute from './routes/weatherRoutes';
+import { notFoundHandler, invalidCityHandler, errorHandler } from './middlewares/errorHandler';
+
+dotenv.config(); // Load environment variables
 
 const app = express();
 const PORT = 3001;
 
-// Middleware
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON body
 

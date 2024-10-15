@@ -16,4 +16,4 @@ const formatWeatherData = (weatherData, hourlyData) => {
     };
 };
 
-module.exports = formatWeatherData;
+export default formatWeatherData;

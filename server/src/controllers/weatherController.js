@@ -1,5 +1,5 @@
-const { getWeatherData, getHourlyForecastData } = require('../services/weatherService');
-const formatWeatherData = require('../utils/formatWeatherData');
+import { getWeatherData, getHourlyForecastData } from '../services/weatherService';
+import formatWeatherData from '../utils/formatWeatherData';
 
 // Controller to get weather data
 const weatherController = async (req, res, next) => {
@@ -14,11 +14,10 @@ const weatherController = async (req, res, next) => {
 
         // Send the formatted weather data to the client
         res.json(formattedData);
-
     } catch (error) {
         // If something goes wrong, pass the error to the error handler
         next(error);
     }
 };
 
-module.exports = weatherController;
+export default weatherController;
